@@ -16,8 +16,10 @@ export default function SimilarFoodPopover() {
   const [suggestions, setSuggestions] = useState<SuggestSimilarFoodOutput>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isManuallyOpened, setIsManuallyOpened] = useState(false);
 
   useEffect(() => {
+    let timer: NodeJS.Timeout;
     if (suggestionItem) {
       const fetchSuggestions = async () => {
         setIsOpen(true);
@@ -37,8 +39,19 @@ export default function SimilarFoodPopover() {
         }
       };
       fetchSuggestions();
+
+      timer = setTimeout(() => {
+        if (!isManuallyOpened) {
+          setIsOpen(false);
+          setSuggestionItem(null);
+        }
+      }, 3000); // Increased to 3 seconds for better UX
     }
-  }, [suggestionItem]);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [suggestionItem, setSuggestionItem, isManuallyOpened]);
 
   const handleAddToCart = (suggestionName: string) => {
     const itemToAdd = menuItems.find(item => item.name === suggestionName);
@@ -47,19 +60,37 @@ export default function SimilarFoodPopover() {
     }
     setIsOpen(false);
     setSuggestionItem(null);
+    setIsManuallyOpened(false);
   };
   
   const onOpenChange = (open: boolean) => {
     setIsOpen(open);
-    if (!open) {
+    if (open) {
+        setIsManuallyOpened(true);
+    } else {
         setSuggestionItem(null);
+        setIsManuallyOpened(false);
+    }
+  }
+
+  const handleTriggerClick = () => {
+    if (isOpen) {
+        onOpenChange(false);
+    } else {
+        onOpenChange(true);
     }
   }
 
   return (
     <Popover open={isOpen} onOpenChange={onOpenChange}>
       <PopoverTrigger asChild>
-        <Button variant="outline" size="icon" className={suggestionItem ? 'animate-pulse ring-2 ring-primary ring-offset-2' : ''} disabled={!suggestionItem}>
+        <Button 
+          variant="outline" 
+          size="icon" 
+          className={suggestionItem ? 'animate-pulse ring-2 ring-primary ring-offset-2' : ''} 
+          disabled={!suggestionItem && suggestions.length === 0}
+          onClick={handleTriggerClick}
+        >
           <Sparkles className="h-5 w-5" />
         </Button>
       </PopoverTrigger>
