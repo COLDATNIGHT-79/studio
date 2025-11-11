@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useCart } from '@/context/cart-context';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet';
-import { ShoppingCart, ChevronsUp, X } from 'lucide-react';
+import { ShoppingCart, ChevronsUp } from 'lucide-react';
 import CartSheetContent from './cart-sheet';
 import Image from 'next/image';
 import { Badge } from '../ui/badge';
@@ -15,9 +15,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import SimilarFoodPopover from '../suggestions/similar-food-popover';
 import CartItemPopover from './cart-item-popover';
-
 
 export default function Cart() {
   const { cart, totalItems, totalPrice } = useCart();
@@ -83,12 +81,9 @@ export default function Cart() {
                 <p className="font-bold text-lg">₹{totalPrice.toFixed(2)}</p>
                 <p className="text-sm text-muted-foreground">{totalItems} items</p>
               </div>
-              <div className="flex items-center gap-2">
-                <SimilarFoodPopover />
-                <Button onClick={() => setIsOpen(true)} disabled={cart.length === 0} size="lg">
-                    <ChevronsUp className="mr-2 h-5 w-5" /> View Cart
-                </Button>
-              </div>
+              <Button onClick={() => setIsOpen(true)} disabled={cart.length === 0} size="lg">
+                  <ChevronsUp className="mr-2 h-5 w-5" /> View Cart
+              </Button>
             </div>
           </div>
         </div>

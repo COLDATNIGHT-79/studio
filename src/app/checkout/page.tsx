@@ -24,21 +24,14 @@ export default function CheckoutPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <header className="mb-12 text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-primary">Checkout</h1>
-        <p className="text-xl text-muted-foreground mt-2">Almost there! Just a few more details.</p>
-      </header>
-      <div className="grid md:grid-cols-2 gap-12">
-        <div>
-          <CheckoutForm />
-        </div>
-        <aside>
-          <Card className="sticky top-8">
+      <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="md:col-span-1">
+           <Card>
             <CardHeader>
-              <CardTitle>Order Summary ({totalItems} items)</CardTitle>
+              <CardTitle>Order Summary</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4 max-h-[50vh] overflow-y-auto pr-2">
+              <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
                 {cart.map(item => (
                   <div key={item.id} className="flex items-center gap-4">
                     <Image
@@ -64,13 +57,16 @@ export default function CheckoutPage() {
                 <span>₹{totalPrice.toFixed(2)}</span>
               </div>
             </CardContent>
-            <CardFooter>
+             <CardFooter>
                  <Button variant="outline" asChild className="w-full">
                     <Link href="/">Continue Shopping</Link>
                  </Button>
             </CardFooter>
           </Card>
-        </aside>
+        </div>
+        <div className="md:col-span-1">
+          <CheckoutForm />
+        </div>
       </div>
     </div>
   );

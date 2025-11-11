@@ -7,6 +7,7 @@ import Header from '@/components/layout/header';
 import FilterBar from '@/components/menu/filter-bar';
 import MenuGrid from '@/components/menu/menu-grid';
 import Cart from '@/components/cart/cart';
+import SimilarFoodFAB from '@/components/suggestions/similar-food-fab';
 
 export default function Home() {
   const [activeDietaryFilters, setActiveDietaryFilters] = useState<Set<DietaryFilter>>(new Set());
@@ -53,6 +54,7 @@ export default function Home() {
         />
       </main>
       <Cart />
+      <SimilarFoodFAB />
     </div>
   );
 }

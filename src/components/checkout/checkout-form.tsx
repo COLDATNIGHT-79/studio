@@ -5,7 +5,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
@@ -13,7 +12,8 @@ import { handleOrder } from '@/app/actions';
 import { useCart } from '@/context/cart-context';
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Loader2 } from 'lucide-react';
+import { Loader2, Lock } from 'lucide-react';
+import { Separator } from '../ui/separator';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -64,24 +64,24 @@ export default function CheckoutForm() {
 
   if (isSubmitted) {
     return (
-        <Card className="text-center">
+        <Card className="text-center py-12">
             <CardHeader>
-                <CardTitle className="text-2xl text-primary">Thank You for Your Order!</CardTitle>
-                <CardDescription>Your food is on its way. We appreciate your business!</CardDescription>
+                <CardTitle className="text-3xl text-primary">Thank You!</CardTitle>
+                <CardDescription className="text-lg">Your order is confirmed and on its way.</CardDescription>
             </CardHeader>
         </Card>
     );
   }
 
   return (
-    <Card>
+    <Card className="border-none shadow-none">
       <CardHeader>
         <CardTitle>Shipping & Payment</CardTitle>
         <CardDescription>Please fill out your details to complete the order.</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <div className="space-y-4">
                 <FormField
                 control={form.control}
@@ -123,6 +123,8 @@ export default function CheckoutForm() {
                 )}
                 />
             </div>
+
+            <Separator />
             
             <FormField
               control={form.control}
@@ -134,19 +136,19 @@ export default function CheckoutForm() {
                     <RadioGroup
                       onValueChange={field.onChange}
                       defaultValue={field.value}
-                      className="flex flex-col space-y-1"
+                      className="grid grid-cols-2 gap-4"
                     >
-                      <FormItem className="flex items-center space-x-3 space-y-0">
-                        <FormControl>
-                          <RadioGroupItem value="cod" />
-                        </FormControl>
-                        <FormLabel className="font-normal">Cash on Delivery (COD)</FormLabel>
+                      <FormItem>
+                         <RadioGroupItem value="cod" id="cod" className="peer sr-only" />
+                         <FormLabel htmlFor="cod" className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
+                            Cash on Delivery
+                         </FormLabel>
                       </FormItem>
-                      <FormItem className="flex items-center space-x-3 space-y-0">
-                        <FormControl>
-                          <RadioGroupItem value="upi" />
-                        </FormControl>
-                        <FormLabel className="font-normal">UPI</FormLabel>
+                      <FormItem>
+                         <RadioGroupItem value="upi" id="upi" className="peer sr-only" />
+                         <FormLabel htmlFor="upi" className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
+                            UPI
+                         </FormLabel>
                       </FormItem>
                     </RadioGroup>
                   </FormControl>
@@ -169,9 +171,15 @@ export default function CheckoutForm() {
               </Card>
             )}
             
-            <Button type="submit" className="w-full" disabled={isSubmitting}>
-              {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-              Place Order
+            <Separator />
+
+            <Button type="submit" size="lg" className="w-full h-14 text-lg font-bold" disabled={isSubmitting}>
+              {isSubmitting ? (
+                <Loader2 className="mr-2 h-6 w-6 animate-spin" /> 
+              ) : (
+                <Lock className="mr-3 h-5 w-5" />
+              )}
+              Place Secure Order
             </Button>
           </form>
         </Form>
