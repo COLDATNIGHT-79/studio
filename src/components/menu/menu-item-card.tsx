@@ -54,7 +54,7 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
         </div>
       </CardContent>
       <CardFooter className="flex justify-between items-center mt-auto pt-4">
-        <p className="text-xl font-bold text-primary">${item.price.toFixed(2)}</p>
+        <p className="text-xl font-bold text-primary">₹{item.price.toFixed(2)}</p>
         <Button onClick={handleAddToCart} size="sm">
           <PlusCircle className="mr-2 h-4 w-4" />
           Add to Cart

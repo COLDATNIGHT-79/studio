@@ -25,7 +25,7 @@ export default function CartItem({ item }: CartItemProps) {
       />
       <div className="flex-grow">
         <p className="font-semibold">{item.name}</p>
-        <p className="text-sm text-muted-foreground">${item.price.toFixed(2)}</p>
+        <p className="text-sm text-muted-foreground">₹{item.price.toFixed(2)}</p>
         <div className="flex items-center gap-2 mt-2">
           <Button
             variant="outline"
@@ -52,7 +52,7 @@ export default function CartItem({ item }: CartItemProps) {
         </div>
       </div>
       <div className="text-right">
-        <p className="font-bold">${(item.price * item.quantity).toFixed(2)}</p>
+        <p className="font-bold">₹{(item.price * item.quantity).toFixed(2)}</p>
         <Button
           variant="ghost"
           size="icon"

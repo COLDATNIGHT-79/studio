@@ -45,7 +45,7 @@ export default function CartSheetContent({ onClose }: CartSheetContentProps) {
           <div className="w-full space-y-4">
             <div className="flex justify-between items-center text-lg font-semibold">
               <span>Subtotal</span>
-              <span>${totalPrice.toFixed(2)}</span>
+              <span>₹{totalPrice.toFixed(2)}</span>
             </div>
              <SheetClose asChild>
                 <Button asChild size="lg" className="w-full" onClick={onClose}>

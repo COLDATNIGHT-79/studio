@@ -14,7 +14,9 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
+} from "@/components/ui/carousel";
+import SimilarFoodPopover from '../suggestions/similar-food-popover';
+import CartItemPopover from './cart-item-popover';
 
 
 export default function Cart() {
@@ -45,23 +47,25 @@ export default function Cart() {
                         <CarouselContent className="-ml-2">
                             {cart.map((item) => (
                                 <CarouselItem key={item.id} className="pl-2 basis-1/4 sm:basis-1/5 md:basis-1/6">
-                                     <div className="relative">
-                                        <Image
-                                            src={item.image}
-                                            alt={item.name}
-                                            width={56}
-                                            height={56}
-                                            className="rounded-full object-cover aspect-square border-2 border-primary/50"
-                                        />
-                                        {item.quantity > 1 && (
-                                            <Badge
-                                                variant="destructive"
-                                                className="absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center rounded-full text-xs"
-                                            >
-                                                {item.quantity}
-                                            </Badge>
-                                        )}
-                                    </div>
+                                     <CartItemPopover item={item}>
+                                        <div className="relative cursor-pointer">
+                                            <Image
+                                                src={item.image}
+                                                alt={item.name}
+                                                width={56}
+                                                height={56}
+                                                className="rounded-full object-cover aspect-square border-2 border-primary/50"
+                                            />
+                                            {item.quantity > 1 && (
+                                                <Badge
+                                                    variant="destructive"
+                                                    className="absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center rounded-full text-xs"
+                                                >
+                                                    {item.quantity}
+                                                </Badge>
+                                            )}
+                                        </div>
+                                     </CartItemPopover>
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
@@ -76,12 +80,15 @@ export default function Cart() {
             
             <div className="flex items-center gap-4">
               <div className="text-right">
-                <p className="font-bold text-lg">${totalPrice.toFixed(2)}</p>
+                <p className="font-bold text-lg">₹{totalPrice.toFixed(2)}</p>
                 <p className="text-sm text-muted-foreground">{totalItems} items</p>
               </div>
-              <Button onClick={() => setIsOpen(true)} disabled={cart.length === 0} size="lg">
-                <ChevronsUp className="mr-2 h-5 w-5" /> View Cart
-              </Button>
+              <div className="flex items-center gap-2">
+                <SimilarFoodPopover />
+                <Button onClick={() => setIsOpen(true)} disabled={cart.length === 0} size="lg">
+                    <ChevronsUp className="mr-2 h-5 w-5" /> View Cart
+                </Button>
+              </div>
             </div>
           </div>
         </div>

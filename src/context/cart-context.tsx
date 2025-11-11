@@ -24,6 +24,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const { toast } = useToast();
 
   const addToCart = (item: MenuItem) => {
+    let itemAdded = false;
     setCart(prevCart => {
       const existingItem = prevCart.find(cartItem => cartItem.id === item.id);
       if (existingItem) {
@@ -33,13 +34,22 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             : cartItem
         );
       }
+      itemAdded = true;
       return [...prevCart, { ...item, quantity: 1 }];
     });
-    toast({
-      title: `${item.name} added to cart!`,
-      description: "We're finding some similar items for you.",
-    });
-    setSuggestionItem(item);
+    
+    if (itemAdded) {
+        toast({
+            title: `${item.name} added to cart!`,
+            description: "We're finding some similar items for you.",
+        });
+        setSuggestionItem(item);
+    } else {
+        toast({
+            title: `Another ${item.name} added!`,
+            description: `Quantity is now ${cart.find(i => i.id === item.id)!.quantity + 1}.`,
+        });
+    }
   };
 
   const removeFromCart = (itemId: string) => {

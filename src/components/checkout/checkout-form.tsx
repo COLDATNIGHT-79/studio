@@ -161,7 +161,7 @@ export default function CheckoutForm() {
                   <CardTitle className="text-lg">UPI Payment</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
-                  <p className="text-sm">Please pay <span className="font-bold text-primary">${totalPrice.toFixed(2)}</span> to complete your order.</p>
+                  <p className="text-sm">Please pay <span className="font-bold text-primary">₹{totalPrice.toFixed(2)}</span> to complete your order.</p>
                   <p className="text-sm">Scan the QR code or pay to the UPI ID:</p>
                   <p className="font-mono bg-background p-2 rounded-md text-center">your-restaurant@paytm</p>
                   <p className="text-xs text-muted-foreground">After payment, please click "Place Order" to confirm.</p>

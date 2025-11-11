@@ -7,7 +7,6 @@ import Header from '@/components/layout/header';
 import FilterBar from '@/components/menu/filter-bar';
 import MenuGrid from '@/components/menu/menu-grid';
 import Cart from '@/components/cart/cart';
-import SimilarFoodDialog from '@/components/suggestions/similar-food-dialog';
 
 export default function Home() {
   const [activeDietaryFilters, setActiveDietaryFilters] = useState<Set<DietaryFilter>>(new Set());
@@ -54,7 +53,6 @@ export default function Home() {
         />
       </main>
       <Cart />
-      <SimilarFoodDialog />
     </div>
   );
 }

@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useCart } from '@/context/cart-context';
 import { suggestSimilarFood, type SuggestSimilarFoodOutput } from '@/ai/flows/suggest-similar-food';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -11,14 +11,16 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Sparkles, PlusCircle } from 'lucide-react';
 import { menuItems } from '@/lib/menu-data';
 
-export default function SimilarFoodDialog() {
+export default function SimilarFoodPopover() {
   const { suggestionItem, setSuggestionItem, addToCart: addSuggestedToCart } = useCart();
   const [suggestions, setSuggestions] = useState<SuggestSimilarFoodOutput>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     if (suggestionItem) {
       const fetchSuggestions = async () => {
+        setIsOpen(true);
         setIsLoading(true);
         setSuggestions([]);
         try {
@@ -43,25 +45,38 @@ export default function SimilarFoodDialog() {
     if (itemToAdd) {
         addSuggestedToCart(itemToAdd);
     }
+    setIsOpen(false);
     setSuggestionItem(null);
   };
+  
+  const onOpenChange = (open: boolean) => {
+    setIsOpen(open);
+    if (!open) {
+        setSuggestionItem(null);
+    }
+  }
 
   return (
-    <Dialog open={!!suggestionItem} onOpenChange={(open) => !open && setSuggestionItem(null)}>
-      <DialogContent className="sm:max-w-3xl">
-        <DialogHeader>
-          <DialogTitle className="flex items-center gap-2 text-2xl">
-            <Sparkles className="h-6 w-6 text-primary" />
+    <Popover open={isOpen} onOpenChange={onOpenChange}>
+      <PopoverTrigger asChild>
+        <Button variant="outline" size="icon" className={suggestionItem ? 'animate-pulse ring-2 ring-primary ring-offset-2' : ''} disabled={!suggestionItem}>
+          <Sparkles className="h-5 w-5" />
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-[80vw] sm:w-[50vw] lg:w-[400px] mr-4">
+        <div className="space-y-2">
+          <h4 className="font-medium leading-none flex items-center gap-2">
+            <Sparkles className="h-4 w-4 text-primary" />
             You might also like...
-          </DialogTitle>
-          <DialogDescription>
-            Since you added {suggestionItem?.name}, here are some similar dishes we think you'll love.
-          </DialogDescription>
-        </DialogHeader>
+          </h4>
+          <p className="text-sm text-muted-foreground">
+            Since you added {suggestionItem?.name}, try these!
+          </p>
+        </div>
         <div className="py-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 gap-4">
             {isLoading &&
-              Array.from({ length: 3 }).map((_, i) => (
+              Array.from({ length: 2 }).map((_, i) => (
                 <Card key={i}>
                   <CardHeader>
                     <Skeleton className="h-5 w-3/4" />
@@ -75,10 +90,10 @@ export default function SimilarFoodDialog() {
                   </CardFooter>
                 </Card>
               ))}
-            {!isLoading && suggestions.map(suggestion => (
+            {!isLoading && suggestions.slice(0, 2).map(suggestion => (
               <Card key={suggestion.name} className="flex flex-col">
                 <CardHeader>
-                  <CardTitle>{suggestion.name}</CardTitle>
+                  <CardTitle className="text-base">{suggestion.name}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="flex flex-wrap gap-1">
@@ -96,11 +111,11 @@ export default function SimilarFoodDialog() {
               </Card>
             ))}
              {!isLoading && suggestions.length === 0 && (
-                <p className="col-span-full text-center text-muted-foreground">No suggestions available at the moment.</p>
+                <p className="col-span-full text-center text-muted-foreground">No suggestions available.</p>
              )}
           </div>
         </div>
-      </DialogContent>
-    </Dialog>
+      </PopoverContent>
+    </Popover>
   );
 }
