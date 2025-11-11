@@ -28,14 +28,14 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
   }
 
   return (
-    <Card className="flex flex-col overflow-hidden h-full group transition-shadow duration-300 hover:shadow-xl">
+    <Card className="flex flex-col overflow-hidden h-full group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <div className="overflow-hidden">
         <Image
           src={item.image}
           alt={item.name}
           width={600}
           height={400}
-          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-48 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
           data-ai-hint={item.imageHint}
         />
       </div>
