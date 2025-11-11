@@ -1,3 +1,304 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "margherita-pizza",
+      "description": "Classic margherita pizza",
+      "imageUrl": "https://images.unsplash.com/photo-1709392975966-6e76d0452436?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGl6emElMjBjaGVlc2V8ZW58MHx8fHwxNzYyODE2OTA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pizza cheese"
+    },
+    {
+      "id": "pepperoni-pizza",
+      "description": "Pizza with pepperoni slices",
+      "imageUrl": "https://images.unsplash.com/photo-1604917869287-3ae73c77e227?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwaXp6YSUyMG1lYXR8ZW58MHx8fHwxNzYyODQ5NTM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pizza meat"
+    },
+    {
+      "id": "veggie-delight-pizza",
+      "description": "Pizza loaded with fresh vegetables",
+      "imageUrl": "https://images.unsplash.com/photo-1689458322782-32d23dad4e02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwaXp6YSUyMHZlZ2V0YWJsZXN8ZW58MHx8fHwxNzYyODQ5NTM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pizza vegetables"
+    },
+    {
+      "id": "chicken-alfredo-pasta",
+      "description": "Creamy chicken alfredo pasta",
+      "imageUrl": "https://images.unsplash.com/photo-1619557511809-c851644e0134?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwYXN0YSUyMGNoaWNrZW58ZW58MHx8fHwxNzYyODQ5NTM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pasta chicken"
+    },
+    {
+      "id": "spaghetti-bolognese",
+      "description": "Spaghetti with a rich meat sauce",
+      "imageUrl": "https://images.unsplash.com/photo-1565086869529-8c7802cca7a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwYXN0YSUyMG1lYXR8ZW58MHx8fHwxNzYyODQ5NTM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pasta meat"
+    },
+    {
+      "id": "penne-arrabbiata",
+      "description": "Penne pasta in a spicy tomato sauce",
+      "imageUrl": "https://images.unsplash.com/photo-1531089073319-17596b946d42?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwYXN0YSUyMHNwaWN5fGVufDB8fHx8MTc2Mjg0OTUzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pasta spicy"
+    },
+    {
+      "id": "classic-beef-burger",
+      "description": "A juicy beef burger with all the fixings",
+      "imageUrl": "https://images.unsplash.com/photo-1676471865269-8149a23a2f4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxidXJnZXIlMjBiZWVmfGVufDB8fHx8MTc2Mjg0OTUzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "burger beef"
+    },
+    {
+      "id": "crispy-chicken-sandwich",
+      "description": "Crispy fried chicken sandwich",
+      "imageUrl": "https://images.unsplash.com/photo-1666819604716-7b60a604bb76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzYW5kd2ljaCUyMGNoaWNrZW58ZW58MHx8fHwxNzYyODQ5NTM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sandwich chicken"
+    },
+    {
+      "id": "veggie-burger",
+      "description": "A delicious and hearty veggie burger",
+      "imageUrl": "https://images.unsplash.com/photo-1550152472-3a60c1705d06?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxidXJnZXIlMjB2ZWdldGFibGV8ZW58MHx8fHwxNzYyODQ5NTM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "burger vegetable"
+    },
+    {
+      "id": "caesar-salad",
+      "description": "Classic Caesar salad with croutons and parmesan",
+      "imageUrl": "https://images.unsplash.com/photo-1663231739738-0872a4cc6ee6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzYWxhZCUyMGdyZWVuc3xlbnwwfHx8fDE3NjI4NDk1Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "salad greens"
+    },
+    {
+      "id": "greek-salad",
+      "description": "Fresh Greek salad with feta and olives",
+      "imageUrl": "https://images.unsplash.com/photo-1757449723357-4fa03553b8a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzYWxhZCUyMGZldGF8ZW58MHx8fHwxNzYyNzY0NjUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "salad feta"
+    },
+    {
+      "id": "chicken-tikka-masala",
+      "description": "Creamy and flavorful chicken tikka masala",
+      "imageUrl": "https://images.unsplash.com/photo-1627366422957-3efa9c6df0fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdXJyeSUyMGNoaWNrZW58ZW58MHx8fHwxNzYyODQ5NTM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "curry chicken"
+    },
+    {
+      "id": "paneer-butter-masala",
+      "description": "Rich and creamy paneer butter masala",
+      "imageUrl": "https://images.unsplash.com/photo-1708793873401-e8c6c153b76a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdXJyeSUyMHBhbmVlcnxlbnwwfHx8fDE3NjI4NDk1Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "curry paneer"
+    },
+    {
+      "id": "chana-masala",
+      "description": "Spicy and tangy chickpea curry",
+      "imageUrl": "https://images.unsplash.com/photo-1597387216134-81e3c0e69b21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjdXJyeSUyMGNoaWNrcGVhc3xlbnwwfHx8fDE3NjI4NDk1Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "curry chickpeas"
+    },
+    {
+      "id": "dal-makhani",
+      "description": "Creamy black lentil curry",
+      "imageUrl": "https://images.unsplash.com/photo-1586981114766-708f09a71e20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjdXJyeSUyMGxlbnRpbHxlbnwwfHx8fDE3NjI4NDk1Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "curry lentil"
+    },
+    {
+      "id": "garlic-naan",
+      "description": "Soft and fluffy garlic naan bread",
+      "imageUrl": "https://images.unsplash.com/photo-1725483990150-61a9fbd746d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxicmVhZCUyMG5hYW58ZW58MHx8fHwxNzYyODQ5NTM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "bread naan"
+    },
+    {
+      "id": "samosa",
+      "description": "Crispy pastry filled with spiced potatoes and peas",
+      "imageUrl": "https://images.unsplash.com/photo-1559880256-4139a809c0c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzbmFjayUyMGZyaWVkfGVufDB8fHx8MTc2Mjg0OTUzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "snack fried"
+    },
+    {
+      "id": "chicken-biryani",
+      "description": "Aromatic and flavorful chicken biryani",
+      "imageUrl": "https://images.unsplash.com/photo-1705596704813-b39b95549cd2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxyaWNlJTIwY2hpY2tlbnxlbnwwfHx8fDE3NjI4NDk1Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "rice chicken"
+    },
+    {
+      "id": "vegetable-biryani",
+      "description": "Fragrant rice dish with mixed vegetables",
+      "imageUrl": "https://images.unsplash.com/photo-1737625854730-56e11fcaff17?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxyaWNlJTIwdmVnZXRhYmxlc3xlbnwwfHx8fDE3NjI4NDk1Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "rice vegetables"
+    },
+    {
+      "id": "masala-dosa",
+      "description": "Crispy crepe with a spiced potato filling",
+      "imageUrl": "https://images.unsplash.com/photo-1588613654948-5037445505cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjcmVwZSUyMHBvdGF0b3xlbnwwfHx8fDE3NjI4NDk1Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crepe potato"
+    },
+    {
+      "id": "idli-sambar",
+      "description": "Steamed rice cakes with lentil stew",
+      "imageUrl": "https://images.unsplash.com/photo-1613045935265-265ff612e0e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyaWNlJTIwbGVudGlsfGVufDB8fHx8MTc2Mjg0OTUzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "rice lentil"
+    },
+    {
+      "id": "tacos-al-pastor",
+      "description": "Marinated pork tacos with pineapple",
+      "imageUrl": "https://images.unsplash.com/photo-1613591797540-862e54975da8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0YWNvcyUyMHBvcmt8ZW58MHx8fHwxNzYyODA4MjE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tacos pork"
+    },
+    {
+      "id": "beef-barbacoa-tacos",
+      "description": "Slow-cooked shredded beef tacos",
+      "imageUrl": "https://images.unsplash.com/photo-1599974496394-93f03b1ba1e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0YWNvcyUyMGJlZWZ8ZW58MHx8fHwxNzYyODQ5NTM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tacos beef"
+    },
+    {
+      "id": "fish-tacos",
+      "description": "Battered fish tacos with cabbage slaw",
+      "imageUrl": "https://images.unsplash.com/photo-1611262359546-64e2822b2ab5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0YWNvcyUyMGZpc2h8ZW58MHx8fHwxNzYyODQ5NTM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tacos fish"
+    },
+    {
+      "id": "bean-and-cheese-burrito",
+      "description": "A simple and satisfying bean and cheese burrito",
+      "imageUrl": "https://images.unsplash.com/photo-1612504258838-fbf14fe4437d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxidXJyaXRvJTIwYmVhbnxlbnwwfHx8fDE3NjI4NDk1Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "burrito bean"
+    },
+    {
+      "id": "chicken-quesadilla",
+      "description": "Cheesy chicken quesadilla with salsa and sour cream",
+      "imageUrl": "https://images.unsplash.com/photo-1547965426-adeccadb3973?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxxdWVzYWRpbGxhJTIwY2hpY2tlbnxlbnwwfHx8fDE3NjI4NDk1Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "quesadilla chicken"
+    },
+    {
+      "id": "sushi-california-roll",
+      "description": "Crab, avocado, and cucumber sushi roll",
+      "imageUrl": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdXNoaSUyMHJvbGx8ZW58MHx8fHwxNzYyODQ5NTM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sushi roll"
+    },
+    {
+      "id": "sushi-spicy-tuna-roll",
+      "description": "Spicy tuna and cucumber roll",
+      "imageUrl": "https://images.unsplash.com/photo-1653565084296-5ec4398878da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzdXNoaSUyMHNwaWN5fGVufDB8fHx8MTc2Mjg0OTUzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sushi spicy"
+    },
+    {
+      "id": "sushi-avocado-roll",
+      "description": "Simple and creamy avocado roll",
+      "imageUrl": "https://images.unsplash.com/photo-1657895116452-18ffa734671f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdXNoaSUyMGF2b2NhZG98ZW58MHx8fHwxNzYyODQ5NTM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sushi avocado"
+    },
+    {
+      "id": "chocolate-lava-cake",
+      "description": "Warm chocolate cake with a gooey center",
+      "imageUrl": "https://images.unsplash.com/photo-1673551494394-23b13e77e58b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGVzc2VydCUyMGNob2NvbGF0ZXxlbnwwfHx8fDE3NjI4MDMxOTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dessert chocolate"
+    },
+    {
+      "id": "new-york-cheesecake",
+      "description": "Classic New York style cheesecake",
+      "imageUrl": "https://images.unsplash.com/photo-1678408854004-2f931669eccd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkZXNzZXJ0JTIwY2FrZXxlbnwwfHx8fDE3NjI3NjU0NDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dessert cake"
+    },
+    {
+      "id": "gulab-jamun",
+      "description": "Sweet milk solids dumplings in syrup",
+      "imageUrl": "https://images.unsplash.com/photo-1760263215450-b13943da7e17?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkZXNzZXJ0JTIwaW5kaWFufGVufDB8fHx8MTc2Mjg0OTUzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dessert indian"
+    },
+    {
+      "id": "rasmalai",
+      "description": "Cottage cheese patties in sweetened milk",
+      "imageUrl": "https://images.unsplash.com/photo-1568627175551-88ba5b80c0c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkZXNzZXJ0JTIwbWlsa3xlbnwwfHx8fDE3NjI4NDk1Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dessert milk"
+    },
+    {
+      "id": "coca-cola",
+      "description": "A classic can of Coca-Cola",
+      "imageUrl": "https://images.unsplash.com/photo-1607835498702-6e8d59dba4ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkcmluayUyMHNvZGF8ZW58MHx8fHwxNzYyODQ5NTM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "drink soda"
+    },
+    {
+      "id": "fresh-lime-soda",
+      "description": "Refreshing soda with fresh lime juice",
+      "imageUrl": "https://images.unsplash.com/photo-1700046409844-794ea9737f0d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkcmluayUyMGxpbWV8ZW58MHx8fHwxNzYyODQ5NTM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "drink lime"
+    },
+    {
+      "id": "mango-lassi",
+      "description": "Creamy yogurt and mango smoothie",
+      "imageUrl": "https://images.unsplash.com/photo-1629637272678-9b0d5a41b1e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkcmluayUyMG1hbmdvfGVufDB8fHx8MTc2Mjg0OTUzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "drink mango"
+    },
+    {
+      "id": "iced-tea",
+      "description": "Chilled sweet iced tea",
+      "imageUrl": "https://images.unsplash.com/photo-1524449800578-cab883a3fc7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkcmluayUyMHRlYXxlbnwwfHx8fDE3NjI4NDk1Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "drink tea"
+    },
+    {
+      "id": "french-fries",
+      "description": "Crispy golden french fries",
+      "imageUrl": "https://images.unsplash.com/photo-1564583412758-2d2a7a53f834?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzbmFjayUyMHBvdGF0b3xlbnwwfHx8fDE3NjI4NDk1Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "snack potato"
+    },
+    {
+      "id": "onion-rings",
+      "description": "Battered and fried onion rings",
+      "imageUrl": "https://images.unsplash.com/photo-1560971017-e39da06c9a31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzbmFjayUyMG9uaW9ufGVufDB8fHx8MTc2Mjg0OTUzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "snack onion"
+    },
+    {
+      "id": "mozzarella-sticks",
+      "description": "Fried cheese sticks with marinara sauce",
+      "imageUrl": "https://images.unsplash.com/photo-1656389812102-5437d0e44ba3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzbmFjayUyMGNoZWVzZXxlbnwwfHx8fDE3NjI4NDk1Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "snack cheese"
+    },
+    {
+      "id": "palak-paneer",
+      "description": "Spinach and cottage cheese curry",
+      "imageUrl": "https://images.unsplash.com/photo-1707269388311-a84c6c59b0ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y3VycnklMjBzcGluYWNofGVufDB8fHx8MTc2Mjg0OTUzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "curry spinach"
+    },
+    {
+      "id": "mutton-rogan-josh",
+      "description": "Aromatic lamb curry",
+      "imageUrl": "https://images.unsplash.com/photo-1640542509430-f529fdfce835?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjdXJyeSUyMGxhbWJ8ZW58MHx8fHwxNzYyODQ5NTM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "curry lamb"
+    },
+    {
+      "id": "hakka-noodles",
+      "description": "Indo-Chinese style stir-fried noodles",
+      "imageUrl": "https://images.unsplash.com/photo-1602811379794-d37fb6b825cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxub29kbGVzJTIwdmVnZXRhYmxlfGVufDB8fHx8MTc2Mjg0OTUzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "noodles vegetable"
+    },
+    {
+      "id": "manchurian-gravy",
+      "description": "Vegetable balls in a tangy gravy",
+      "imageUrl": "https://images.unsplash.com/photo-1592578630143-fac65cda7a67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxncmF2eSUyMHZlZ2V0YWJsZXxlbnwwfHx8fDE3NjI4NDk1Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "gravy vegetable"
+    },
+    {
+      "id": "tomato-soup",
+      "description": "Creamy and comforting tomato soup",
+      "imageUrl": "https://images.unsplash.com/photo-1624382075163-a4fdb99b99ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c291cCUyMHRvbWF0b3xlbnwwfHx8fDE3NjI4NDk1Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "soup tomato"
+    },
+    {
+      "id": "sweet-corn-soup",
+      "description": "Sweet and savory corn soup",
+      "imageUrl": "https://images.unsplash.com/photo-1721942893912-e2eed6362eec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzb3VwJTIwY29ybnxlbnwwfHx8fDE3NjI4NDk1Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "soup corn"
+    },
+    {
+      "id": "plain-dosa",
+      "description": "A plain, crispy rice and lentil crepe",
+      "imageUrl": "https://picsum.photos/seed/147/600/400",
+      "imageHint": "crepe plain"
+    },
+    {
+      "id": "pav-bhaji",
+      "description": "Spiced vegetable mash served with soft buns",
+      "imageUrl": "https://images.unsplash.com/photo-1543826173-70651703c5a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dmVnZXRhYmxlJTIwY3Vycnl8ZW58MHx8fHwxNzYyODM4NDg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "vegetable curry"
+    },
+    {
+      "id": "chole-bhature",
+      "description": "Spicy chickpeas with fluffy fried bread",
+      "imageUrl": "https://images.unsplash.com/photo-1664192579003-448440d6b9d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjaGlja3BlYXMlMjBicmVhZHxlbnwwfHx8fDE3NjI4NDk1Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chickpeas bread"
+    },
+    {
+      "id": "rajma-chawal",
+      "description": "Kidney bean curry with steamed rice",
+      "imageUrl": "https://images.unsplash.com/photo-1721314678207-8b7bd43e677b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxiZWFucyUyMHJpY2V8ZW58MHx8fHwxNzYyODQ5NTM4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "beans rice"
+    }
+  ]
 }
