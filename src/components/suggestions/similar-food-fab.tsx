@@ -23,6 +23,7 @@ export default function SimilarFoodFAB() {
     let fadeOutTimer: NodeJS.Timeout;
     if (suggestionItem) {
       setIsVisible(true);
+      setIsOpen(true); // Open the popover when an item is set
       const fetchSuggestions = async () => {
         setIsLoading(true);
         setSuggestions([]);
@@ -42,18 +43,20 @@ export default function SimilarFoodFAB() {
       fetchSuggestions();
 
       fadeOutTimer = setTimeout(() => {
-        if (!isOpen) {
+        if (isOpen) { // Check if user hasn't manually kept it open
+            setIsOpen(false);
             setIsVisible(false);
         }
       }, 5000); 
     } else {
        setIsVisible(false);
+       setIsOpen(false);
     }
 
     return () => {
       clearTimeout(fadeOutTimer);
     };
-  }, [suggestionItem, isOpen]);
+  }, [suggestionItem]);
 
   const handleAddToCart = (suggestionName: string) => {
     const itemToAdd = menuItems.find(item => item.name === suggestionName);
@@ -67,20 +70,22 @@ export default function SimilarFoodFAB() {
   const onOpenChange = (open: boolean) => {
     setIsOpen(open);
     if (!open) {
-        setSuggestionItem(null);
+        // Allow re-triggering even if closed manually
+        setTimeout(() => setSuggestionItem(null), 300);
     }
   }
 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-24 right-4 z-50">
+    <div className="fixed bottom-1/2 translate-y-1/2 right-4 z-50">
         <Popover open={isOpen} onOpenChange={onOpenChange}>
         <PopoverTrigger asChild>
             <Button 
             variant="default" 
             size="icon" 
             className="rounded-full h-14 w-14 shadow-lg animate-pulse ring-2 ring-primary-foreground ring-offset-2"
+            onClick={() => onOpenChange(!isOpen)}
             >
             <Sparkles className="h-7 w-7" />
             </Button>

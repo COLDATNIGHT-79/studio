@@ -12,8 +12,9 @@ import { handleOrder } from '@/app/actions';
 import { useCart } from '@/context/cart-context';
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Loader2, Lock } from 'lucide-react';
+import { Loader2, ShieldCheck } from 'lucide-react';
 import { Separator } from '../ui/separator';
+import QRCode from "react-qr-code";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -39,6 +40,9 @@ export default function CheckoutForm() {
   });
 
   const paymentMethod = form.watch('paymentMethod');
+  const paytmId = '787778006@ptsbi';
+  const upiUrl = `upi://pay?pa=${paytmId}&am=${totalPrice.toFixed(2)}&cu=INR&tn=OrderPayment`;
+
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
@@ -64,19 +68,19 @@ export default function CheckoutForm() {
 
   if (isSubmitted) {
     return (
-        <Card className="text-center py-12">
+        <Card className="text-center py-12 bg-card border-none">
             <CardHeader>
                 <CardTitle className="text-3xl text-primary">Thank You!</CardTitle>
-                <CardDescription className="text-lg">Your order is confirmed and on its way.</CardDescription>
+                <CardDescription className="text-lg text-foreground/80">Your order is confirmed and on its way.</CardDescription>
             </CardHeader>
         </Card>
     );
   }
 
   return (
-    <Card className="border-none shadow-none">
+    <Card className="border-none shadow-none bg-transparent">
       <CardHeader>
-        <CardTitle>Shipping & Payment</CardTitle>
+        <CardTitle className="text-2xl">Shipping & Payment</CardTitle>
         <CardDescription>Please fill out your details to complete the order.</CardDescription>
       </CardHeader>
       <CardContent>
@@ -159,25 +163,23 @@ export default function CheckoutForm() {
 
             {paymentMethod === 'upi' && (
               <Card className="bg-secondary/50">
-                <CardHeader>
-                  <CardTitle className="text-lg">UPI Payment</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  <p className="text-sm">Please pay <span className="font-bold text-primary">₹{totalPrice.toFixed(2)}</span> to complete your order.</p>
-                  <p className="text-sm">Scan the QR code or pay to the UPI ID:</p>
-                  <p className="font-mono bg-background p-2 rounded-md text-center">your-restaurant@paytm</p>
-                  <p className="text-xs text-muted-foreground">After payment, please click "Place Order" to confirm.</p>
+                <CardContent className="p-4 flex flex-col items-center gap-4">
+                  <p className="text-sm text-center">Scan to pay <span className="font-bold text-primary">₹{totalPrice.toFixed(2)}</span> to <span className="font-mono">{paytmId}</span></p>
+                  <div className="bg-white p-2 rounded-md">
+                     <QRCode value={upiUrl} size={128} />
+                  </div>
+                  <p className="text-xs text-muted-foreground text-center">After payment, click "Place Secure Order" to confirm.</p>
                 </CardContent>
               </Card>
             )}
             
             <Separator />
 
-            <Button type="submit" size="lg" className="w-full h-14 text-lg font-bold" disabled={isSubmitting}>
+            <Button type="submit" size="lg" className="w-full h-14 text-lg font-bold bg-green-600 hover:bg-green-700 text-white rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-200" disabled={isSubmitting}>
               {isSubmitting ? (
                 <Loader2 className="mr-2 h-6 w-6 animate-spin" /> 
               ) : (
-                <Lock className="mr-3 h-5 w-5" />
+                <ShieldCheck className="mr-3 h-5 w-5" />
               )}
               Place Secure Order
             </Button>

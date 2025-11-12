@@ -24,12 +24,12 @@ export default function Cart() {
   return (
     <>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetContent side="bottom" className="h-[90vh] flex flex-col">
+        <SheetContent side="bottom" className="h-[90vh] flex flex-col bg-background/95 backdrop-blur-sm">
           <CartSheetContent onClose={() => setIsOpen(false)} />
         </SheetContent>
       </Sheet>
 
-      <footer className="sticky bottom-0 z-40 w-full bg-card/95 backdrop-blur-sm border-t">
+      <footer className="sticky bottom-0 z-40 w-full bg-card/80 backdrop-blur-sm border-t">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-4 flex-grow min-w-0">
@@ -46,13 +46,13 @@ export default function Cart() {
                             {cart.map((item) => (
                                 <CarouselItem key={item.id} className="pl-2 basis-1/4 sm:basis-1/5 md:basis-1/6">
                                      <CartItemPopover item={item}>
-                                        <div className="relative cursor-pointer">
+                                        <div className="relative cursor-pointer group">
                                             <Image
                                                 src={item.image}
                                                 alt={item.name}
                                                 width={56}
                                                 height={56}
-                                                className="rounded-full object-cover aspect-square border-2 border-primary/50"
+                                                className="rounded-full object-cover aspect-square border-2 border-secondary group-hover:border-primary transition-colors"
                                             />
                                             {item.quantity > 1 && (
                                                 <Badge
@@ -78,7 +78,7 @@ export default function Cart() {
             
             <div className="flex items-center gap-4">
               <div className="text-right">
-                <p className="font-bold text-lg">₹{totalPrice.toFixed(2)}</p>
+                <p className="font-bold text-lg text-primary">₹{totalPrice.toFixed(2)}</p>
                 <p className="text-sm text-muted-foreground">{totalItems} items</p>
               </div>
               <Button onClick={() => setIsOpen(true)} disabled={cart.length === 0} size="lg">
