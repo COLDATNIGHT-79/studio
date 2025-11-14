@@ -84,6 +84,27 @@ const getTodaysEvents = ai.defineTool(
   }
 );
 
+const getCurrentTime = ai.defineTool(
+  {
+    name: 'getCurrentTime',
+    description: 'Gets the current time of day (e.g., Morning, Afternoon, Evening) to help make time-appropriate meal suggestions like breakfast, lunch, or dinner.',
+    inputSchema: z.object({}),
+    outputSchema: z.object({
+      timeOfDay: z.string().describe('The current period of the day, such as "Morning", "Afternoon", or "Evening".'),
+    }),
+  },
+  async () => {
+    const hour = new Date().getHours();
+    let timeOfDay = 'Evening';
+    if (hour >= 5 && hour < 12) {
+      timeOfDay = 'Morning';
+    } else if (hour >= 12 && hour < 17) {
+      timeOfDay = 'Afternoon';
+    }
+    return { timeOfDay };
+  }
+);
+
 
 export async function restaurantChat(
   input: RestaurantChatInput
@@ -95,12 +116,15 @@ const restaurantChatPrompt = ai.definePrompt({
   name: 'restaurantChatPrompt',
   input: { schema: RestaurantChatInputSchema },
   output: { schema: RestaurantChatOutputSchema },
-  tools: [getTodaysEvents],
+  tools: [getTodaysEvents, getCurrentTime],
   prompt: `You are a friendly and helpful AI assistant for "Curios Foods", a food ordering platform that hosts menus from various restaurants.
 Your goal is to help users find the perfect meal.
 
-First, call the 'getTodaysEvents' tool to check the date and see if there are any special festivals or events.
-Use this information to make timely and relevant suggestions.
+First, call the 'getCurrentTime' tool to check the time of day and the 'getTodaysEvents' tool to check for festivals.
+Use this context to make relevant suggestions.
+- Suggest breakfast items in the morning.
+- Suggest lunch items in the afternoon.
+- Suggest dinner items in the evening.
 - For festivals like Diwali, recommend special sweets or festive meals.
 - For Valentine's Day, suggest romantic food for couples (e.g., desserts to share, fine dining options).
 - For Children's Day, suggest party offers, kid-friendly meals, or combo deals.
