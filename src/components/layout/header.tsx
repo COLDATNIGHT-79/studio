@@ -7,7 +7,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-primary">
           <UtensilsCrossed className="w-7 h-7" />
-          <span>Shelf to Cart Eats</span>
+          <span>Curios Foods</span>
         </Link>
       </div>
     </header>

@@ -1,4 +1,4 @@
-# Shelf to Cart Eats
+# Curios Foods
 
 This is a Next.js starter project for a food ordering platform powered by a conversational AI assistant.
 

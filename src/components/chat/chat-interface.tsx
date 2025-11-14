@@ -34,7 +34,7 @@ export default function ChatInterface() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'model',
-      content: "Welcome to Shelf to Cart Eats! What can I help you find today? You can ask for recommendations, search for items, or tell me what you're craving.",
+      content: "Welcome to Curios Foods! What can I help you find today? You can ask for recommendations, search for items, or tell me what you're craving.",
     },
   ]);
   const [isLoading, setIsLoading] = useState(false);

@@ -11,7 +11,7 @@ const ptSans = PT_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Shelf to Cart Eats',
+  title: 'Curios Foods',
   description: 'A modern restaurant menu experience.',
 };
 

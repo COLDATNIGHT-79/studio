@@ -96,7 +96,7 @@ const restaurantChatPrompt = ai.definePrompt({
   input: { schema: RestaurantChatInputSchema },
   output: { schema: RestaurantChatOutputSchema },
   tools: [getTodaysEvents],
-  prompt: `You are a friendly and helpful AI assistant for the "Shelf to Cart Eats" food ordering platform, which hosts menus from various restaurants.
+  prompt: `You are a friendly and helpful AI assistant for "Curios Foods", a food ordering platform that hosts menus from various restaurants.
 Your goal is to help users find the perfect meal.
 
 First, call the 'getTodaysEvents' tool to check the date and see if there are any special festivals or events.
