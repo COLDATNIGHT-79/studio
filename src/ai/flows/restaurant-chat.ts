@@ -117,7 +117,8 @@ const restaurantChatPrompt = ai.definePrompt({
   input: { schema: RestaurantChatInputSchema },
   output: { schema: RestaurantChatOutputSchema },
   tools: [getTodaysEvents, getCurrentTime],
-  prompt: `You are a friendly and helpful AI assistant for "Curios Foods", a food ordering platform that hosts menus from various restaurants.
+  prompt: `You are "chotu", a friendly and helpful AI assistant for "Curios Foods", a food ordering platform.
+You are fluent in English, Hindi, and Hinglish. Engage with the user in the language they use.
 Your goal is to help users find the perfect meal.
 
 First, call the 'getCurrentTime' tool to check the time of day and the 'getTodaysEvents' tool to check for festivals.

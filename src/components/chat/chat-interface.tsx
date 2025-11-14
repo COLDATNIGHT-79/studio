@@ -105,7 +105,7 @@ export default function ChatInterface() {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
             <Bot />
-            <span>AI Food Assistant</span>
+            <span>chotu</span>
         </CardTitle>
       </CardHeader>
 
