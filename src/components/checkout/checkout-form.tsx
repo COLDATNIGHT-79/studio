@@ -25,9 +25,11 @@ const formSchema = z.object({
 
 export default function CheckoutForm() {
   const { toast } = useToast();
-  const { totalPrice, clearCart } = useCart();
+  const { getCartTotal, clearCart } = useCart();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const totalPrice = getCartTotal();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

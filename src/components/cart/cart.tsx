@@ -18,8 +18,9 @@ import {
 import CartItemPopover from './cart-item-popover';
 
 export default function Cart() {
-  const { cart, totalItems, totalPrice } = useCart();
+  const { cart, totalItems, getCartTotal } = useCart();
   const [isOpen, setIsOpen] = useState(false);
+  const totalPrice = getCartTotal();
 
   return (
     <>

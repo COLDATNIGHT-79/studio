@@ -14,9 +14,10 @@ import { Form, FormControl, FormField, FormItem } from '@/components/ui/form';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Bot, PlusCircle, Send, User } from 'lucide-react';
+import { Bot, PlusCircle, Send, User, BadgePercent } from 'lucide-react';
 import { Skeleton } from '../ui/skeleton';
 import Image from 'next/image';
+import { Badge } from '../ui/badge';
 
 const formSchema = z.object({
   message: z.string().min(1, 'Message cannot be empty.'),
@@ -131,6 +132,13 @@ export default function ChatInterface() {
                             <div key={item.id} className="bg-card border rounded-lg overflow-hidden p-2 flex flex-col gap-2">
                                 <Image src={item.image} alt={item.name} width={200} height={120} className="rounded-md w-full h-24 object-cover" />
                                 <h4 className="font-semibold text-sm">{item.name}</h4>
+                                <p className="text-xs text-muted-foreground">from {item.restaurant}</p>
+                                 {item.discount && (
+                                    <Badge variant="destructive" className="flex items-center gap-1 w-fit">
+                                      <BadgePercent className="h-3 w-3" />
+                                      {item.discount.percentage}% off for {item.discount.occasion}
+                                    </Badge>
+                                  )}
                                 <div className="flex justify-between items-center mt-auto">
                                     <p className="text-sm font-bold">INR {item.price.toFixed(2)}</p>
                                     <Button size="sm" variant="outline" onClick={() => addToCart(item)}>

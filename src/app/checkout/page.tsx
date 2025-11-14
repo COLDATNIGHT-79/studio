@@ -8,7 +8,10 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
 export default function CheckoutPage() {
-  const { cart, totalPrice, totalItems } = useCart();
+  const { cart, getCartSubtotal, getCartTotal, totalItems } = useCart();
+  const subtotal = getCartSubtotal();
+  const total = getCartTotal();
+  const discount = subtotal - total;
 
   if (cart.length === 0) {
     return (
@@ -43,6 +46,7 @@ export default function CheckoutPage() {
                     />
                     <div className="flex-grow">
                       <p className="font-semibold">{item.name}</p>
+                       <p className="text-sm text-muted-foreground">from {item.restaurant}</p>
                       <p className="text-sm text-muted-foreground">
                         {item.quantity} x INR {item.price.toFixed(2)}
                       </p>
@@ -52,9 +56,21 @@ export default function CheckoutPage() {
                 ))}
               </div>
               <Separator className="my-4" />
-              <div className="flex justify-between font-bold text-lg">
-                <span>Total</span>
-                <span>INR {totalPrice.toFixed(2)}</span>
+              <div className="space-y-2">
+                <div className="flex justify-between">
+                    <span>Subtotal</span>
+                    <span>INR {subtotal.toFixed(2)}</span>
+                </div>
+                {discount > 0 && (
+                    <div className="flex justify-between text-green-500">
+                        <span>Discount</span>
+                        <span>- INR {discount.toFixed(2)}</span>
+                    </div>
+                )}
+                <div className="flex justify-between font-bold text-lg">
+                    <span>Total</span>
+                    <span>INR {total.toFixed(2)}</span>
+                </div>
               </div>
             </CardContent>
              <CardFooter>

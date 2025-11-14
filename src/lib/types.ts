@@ -12,6 +12,11 @@ export interface MenuItem {
   dietary: DietaryFilter[];
   spiceLevel: SpiceLevel;
   category: string;
+  restaurant: string;
+  discount?: {
+    percentage: number;
+    occasion: string; // e.g., "Diwali", "Valentine's Day"
+  };
 }
 
 export interface CartItem extends MenuItem {

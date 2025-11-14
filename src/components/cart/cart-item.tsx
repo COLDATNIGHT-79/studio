@@ -6,13 +6,15 @@ import type { CartItem as CartItemType } from '@/lib/types';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Minus, Plus, Trash2 } from 'lucide-react';
+import { Badge } from '../ui/badge';
 
 interface CartItemProps {
   item: CartItemType;
 }
 
 export default function CartItem({ item }: CartItemProps) {
-  const { updateQuantity, removeFromCart } = useCart();
+  const { updateQuantity, removeFromCart, getDiscountedPrice } = useCart();
+  const { finalPrice, originalPrice, discountPercentage } = getDiscountedPrice(item);
 
   return (
     <div className="flex items-start gap-4 py-4">
@@ -25,7 +27,18 @@ export default function CartItem({ item }: CartItemProps) {
       />
       <div className="flex-grow">
         <p className="font-semibold">{item.name}</p>
-        <p className="text-sm text-muted-foreground">INR {item.price.toFixed(2)}</p>
+        <p className="text-sm text-muted-foreground">from {item.restaurant}</p>
+        <div className="flex items-center gap-2">
+          {discountPercentage && (
+            <Badge variant="destructive">{discountPercentage}% off</Badge>
+          )}
+          <p className={`text-sm ${discountPercentage ? 'text-muted-foreground line-through' : 'text-primary'}`}>
+            INR {originalPrice.toFixed(2)}
+          </p>
+          {discountPercentage && (
+            <p className="text-sm font-bold text-primary">INR {finalPrice.toFixed(2)}</p>
+          )}
+        </div>
         <div className="flex items-center gap-2 mt-2">
           <Button
             variant="outline"
@@ -52,7 +65,7 @@ export default function CartItem({ item }: CartItemProps) {
         </div>
       </div>
       <div className="text-right">
-        <p className="font-bold">INR {(item.price * item.quantity).toFixed(2)}</p>
+        <p className="font-bold">INR {(finalPrice * item.quantity).toFixed(2)}</p>
         <Button
           variant="ghost"
           size="icon"

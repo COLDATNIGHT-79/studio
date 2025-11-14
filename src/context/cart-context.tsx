@@ -1,8 +1,9 @@
 'use client';
 
-import React, { createContext, useContext, useState, useMemo, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useMemo, ReactNode, useCallback } from 'react';
 import type { CartItem, MenuItem } from '@/lib/types';
 import { useToast } from '@/hooks/use-toast';
+import { format } from 'date-fns';
 
 interface CartContextType {
   cart: CartItem[];
@@ -11,17 +12,43 @@ interface CartContextType {
   updateQuantity: (itemId: string, quantity: number) => void;
   clearCart: () => void;
   totalItems: number;
-  totalPrice: number;
+  getCartSubtotal: () => number;
+  getCartTotal: () => number;
+  getDiscountedPrice: (item: MenuItem) => { finalPrice: number; originalPrice: number; discountPercentage: number | null };
   suggestionItem: MenuItem | null;
   setSuggestionItem: (item: MenuItem | null) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
+const todaysEvents = (() => {
+    const today = new Date();
+    const todaysDate = format(today, 'yyyy-MM-dd');
+    let events: string[] = [];
+    if (todaysDate.endsWith('-10-29')) events.push('Diwali');
+    if (todaysDate.endsWith('-03-25')) events.push('Holi');
+    if (todaysDate.endsWith('-02-14')) events.push("Valentine's Day");
+    if (todaysDate.endsWith('-11-14')) events.push("Children's Day");
+    return events;
+})();
+
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [suggestionItem, setSuggestionItem] = useState<MenuItem | null>(null);
   const { toast } = useToast();
+
+  const getDiscountedPrice = useCallback((item: MenuItem) => {
+    const originalPrice = item.price;
+    let finalPrice = item.price;
+    let discountPercentage = null;
+
+    if (item.discount && todaysEvents.includes(item.discount.occasion)) {
+        discountPercentage = item.discount.percentage;
+        finalPrice = originalPrice * (1 - discountPercentage / 100);
+    }
+    
+    return { finalPrice, originalPrice, discountPercentage };
+  }, []);
 
   const addToCart = (item: MenuItem) => {
     let itemAdded = false;
@@ -76,9 +103,18 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     return cart.reduce((total, item) => total + item.quantity, 0);
   }, [cart]);
 
-  const totalPrice = useMemo(() => {
-    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  const getCartSubtotal = useCallback(() => {
+    return cart.reduce((total, item) => {
+        return total + item.price * item.quantity;
+    }, 0);
   }, [cart]);
+
+  const getCartTotal = useCallback(() => {
+    return cart.reduce((total, item) => {
+      const { finalPrice } = getDiscountedPrice(item);
+      return total + finalPrice * item.quantity;
+    }, 0);
+  }, [cart, getDiscountedPrice]);
 
   return (
     <CartContext.Provider
@@ -89,7 +125,9 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         updateQuantity,
         clearCart,
         totalItems,
-        totalPrice,
+        getCartSubtotal,
+        getCartTotal,
+        getDiscountedPrice,
         suggestionItem,
         setSuggestionItem,
       }}

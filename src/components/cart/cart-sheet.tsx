@@ -14,7 +14,10 @@ interface CartSheetContentProps {
 }
 
 export default function CartSheetContent({ onClose }: CartSheetContentProps) {
-  const { cart, totalPrice, totalItems } = useCart();
+  const { cart, getCartTotal, totalItems, getCartSubtotal } = useCart();
+  const subtotal = getCartSubtotal();
+  const total = getCartTotal();
+  const discount = subtotal - total;
 
   return (
     <>
@@ -43,9 +46,21 @@ export default function CartSheetContent({ onClose }: CartSheetContentProps) {
       {cart.length > 0 && (
         <SheetFooter className="px-6 py-4 border-t bg-background">
           <div className="w-full space-y-4">
-            <div className="flex justify-between items-center text-lg font-semibold">
-              <span>Subtotal</span>
-              <span>INR {totalPrice.toFixed(2)}</span>
+             <div className="w-full space-y-2">
+                <div className="flex justify-between items-center text-md">
+                  <span>Subtotal</span>
+                  <span>INR {subtotal.toFixed(2)}</span>
+                </div>
+                {discount > 0 && (
+                    <div className="flex justify-between items-center text-md text-green-500">
+                        <span>Festival Discount</span>
+                        <span>- INR {discount.toFixed(2)}</span>
+                    </div>
+                )}
+                <div className="flex justify-between items-center text-lg font-semibold">
+                  <span>Total</span>
+                  <span>INR {total.toFixed(2)}</span>
+                </div>
             </div>
              <SheetClose asChild>
                 <Button asChild size="lg" className="w-full" onClick={onClose}>
