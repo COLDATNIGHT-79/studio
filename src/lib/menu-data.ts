@@ -241,12 +241,96 @@ export const menuItems: MenuItem[] = [
   },
   // Drinks from "The Watering Hole"
   {
+    id: 'masala-chai',
+    name: 'Masala Chai',
+    description: 'A hot, fragrant tea made with aromatic spices and milk.',
+    price: 100.00,
+    ...getImage('masala-chai'),
+    ingredients: ['Tea Leaves', 'Milk', 'Sugar', 'Spices'],
+    dietary: [],
+    spiceLevel: 'mild',
+    category: 'Hot Beverages',
+    restaurant: 'The Watering Hole'
+  },
+  {
+    id: 'filter-coffee',
+    name: 'Filter Coffee',
+    description: 'Authentic South Indian-style drip coffee, strong and aromatic.',
+    price: 120.00,
+    ...getImage('filter-coffee'),
+    ingredients: ['Coffee Beans', 'Milk', 'Sugar'],
+    dietary: [],
+    spiceLevel: 'mild',
+    category: 'Hot Beverages',
+    restaurant: 'The Watering Hole'
+  },
+  {
     id: 'chocolate-milkshake',
     name: 'Chocolate Milkshake',
     description: 'A thick and creamy milkshake made with real chocolate ice cream.',
     price: 200.00,
     ...getImage('chocolate-milkshake'),
     ingredients: ['Milk', 'Chocolate Ice Cream', 'Sugar'],
+    dietary: [],
+    spiceLevel: 'mild',
+    category: 'Shakes',
+    restaurant: 'The Watering Hole'
+  },
+  {
+    id: 'vanilla-milkshake',
+    name: 'Vanilla Milkshake',
+    description: 'A classic, creamy milkshake made with real vanilla bean ice cream.',
+    price: 190.00,
+    ...getImage('vanilla-milkshake'),
+    ingredients: ['Milk', 'Vanilla Ice Cream', 'Sugar'],
+    dietary: [],
+    spiceLevel: 'mild',
+    category: 'Shakes',
+    restaurant: 'The Watering Hole'
+  },
+  {
+    id: 'strawberry-milkshake',
+    name: 'Strawberry Milkshake',
+    description: 'A fruity and refreshing milkshake made with fresh strawberries.',
+    price: 220.00,
+    ...getImage('strawberry-milkshake'),
+    ingredients: ['Milk', 'Strawberry Ice Cream', 'Fresh Strawberries'],
+    dietary: [],
+    spiceLevel: 'mild',
+    category: 'Shakes',
+    restaurant: 'The Watering Hole'
+  },
+  {
+    id: 'butterscotch-milkshake',
+    name: 'Butterscotch Milkshake',
+    description: 'A sweet and rich milkshake with crunchy butterscotch pieces.',
+    price: 230.00,
+    ...getImage('butterscotch-milkshake'),
+    ingredients: ['Milk', 'Butterscotch Ice Cream', 'Butterscotch Sauce'],
+    dietary: [],
+    spiceLevel: 'mild',
+    category: 'Shakes',
+    restaurant: 'The Watering Hole'
+  },
+  {
+    id: 'oreo-milkshake',
+    name: 'Oreo Milkshake',
+    description: 'A crowd-pleaser! Creamy milkshake blended with Oreo cookies.',
+    price: 240.00,
+    ...getImage('oreo-milkshake'),
+    ingredients: ['Milk', 'Vanilla Ice Cream', 'Oreo Cookies'],
+    dietary: [],
+    spiceLevel: 'mild',
+    category: 'Shakes',
+    restaurant: 'The Watering Hole'
+  },
+  {
+    id: 'mango-milkshake',
+    name: 'Mango Milkshake',
+    description: 'A seasonal delight made with fresh, ripe mangoes.',
+    price: 250.00,
+    ...getImage('mango-milkshake'),
+    ingredients: ['Milk', 'Mango Pulp', 'Vanilla Ice Cream'],
     dietary: [],
     spiceLevel: 'mild',
     category: 'Shakes',
@@ -289,3 +373,5 @@ export const menuItems: MenuItem[] = [
     restaurant: 'The Watering Hole'
   },
 ];
+
+    
