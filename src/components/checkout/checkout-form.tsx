@@ -42,7 +42,7 @@ export default function CheckoutForm() {
   });
 
   const paymentMethod = form.watch('paymentMethod');
-  const paytmId = '787778006@ptsbi';
+  const paytmId = '7877780406@ptsbi';
   const upiUrl = `upi://pay?pa=${paytmId}&am=${totalPrice.toFixed(2)}&cu=INR&tn=OrderPayment`;
 
 
