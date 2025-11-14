@@ -299,6 +299,54 @@
       "description": "Kidney bean curry with steamed rice",
       "imageUrl": "https://images.unsplash.com/photo-1721314678207-8b7bd43e677b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxiZWFucyUyMHJpY2V8ZW58MHx8fHwxNzYyODQ5NTM4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "beans rice"
+    },
+    {
+      "id": "masala-omelette",
+      "description": "Indian spiced omelette",
+      "imageUrl": "https://images.unsplash.com/photo-1613425662920-b957a1e979e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxvbWVsZXR0ZSUyMHNwaWN5fGVufDB8fHx8MTc2MzA5NzY5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "omelette spicy"
+    },
+    {
+      "id": "aloo-paratha",
+      "description": "Potato stuffed flatbread",
+      "imageUrl": "https://images.unsplash.com/photo-1594037360672-b9ede814d72e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxicmVhZCUyMHBvdGF0b3xlbnwwfHx8fDE3NjMwOTc2OTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "bread potato"
+    },
+    {
+      "id": "special-veg-thali",
+      "description": "A platter of various vegetarian dishes",
+      "imageUrl": "https://images.unsplash.com/photo-1749653010926-eff039e6dfa5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx2ZWdldGFyaWFuJTIwcGxhdHRlcnxlbnwwfHx8fDE3NjMwOTc2OTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "vegetarian platter"
+    },
+    {
+      "id": "vada-pav",
+      "description": "Potato fritter sandwich",
+      "imageUrl": "https://images.unsplash.com/photo-1591972619306-0a13c4ab5c1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwb3RhdG8lMjBzYW5kd2ljaHxlbnwwfHx8fDE3NjMwOTc2OTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "potato sandwich"
+    },
+    {
+      "id": "chocolate-milkshake",
+      "description": "Creamy chocolate milkshake",
+      "imageUrl": "https://images.unsplash.com/photo-1696487773736-9a02b1381a5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzaGFrZSUyMGNob2NvbGF0ZXxlbnwwfHx8fDE3NjMwOTc2OTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "shake chocolate"
+    },
+    {
+      "id": "fresh-orange-juice",
+      "description": "Glass of fresh orange juice",
+      "imageUrl": "https://images.unsplash.com/photo-1719032705744-9cdbdf2b25c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxqdWljZSUyMG9yYW5nZXxlbnwwfHx8fDE3NjMwOTc2OTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "juice orange"
+    },
+    {
+      "id": "kingfisher-beer",
+      "description": "Bottle of Kingfisher beer",
+      "imageUrl": "https://images.unsplash.com/photo-1585620384249-5cf9442c87f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxiZWVyJTIwYm90dGxlfGVufDB8fHx8MTc2MzA2MjE5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "beer bottle"
+    },
+    {
+      "id": "mojito-cocktail",
+      "description": "Mojito cocktail with mint and lime",
+      "imageUrl": "https://images.unsplash.com/photo-1627366422858-c5af17ac71ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb2NrdGFpbCUyMG1pbnR8ZW58MHx8fHwxNzYzMDk3Njk3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cocktail mint"
     }
   ]
 }

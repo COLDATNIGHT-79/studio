@@ -176,4 +176,116 @@ export const menuItems: MenuItem[] = [
     restaurant: 'Pizza Palace',
     discount: { percentage: 15, occasion: "Children's Day" }
   },
+  // Breakfast from "Morning Bites"
+  {
+    id: 'masala-omelette',
+    name: 'Masala Omelette',
+    description: 'A fluffy omelette with onions, tomatoes, and Indian spices.',
+    price: 220.00,
+    ...getImage('masala-omelette'),
+    ingredients: ['Eggs', 'Onion', 'Tomato', 'Spices'],
+    dietary: ['gluten-free'],
+    spiceLevel: 'medium',
+    category: 'Breakfast',
+    restaurant: 'Morning Bites'
+  },
+  {
+    id: 'aloo-paratha',
+    name: 'Aloo Paratha',
+    description: 'Whole wheat flatbread stuffed with spiced mashed potatoes.',
+    price: 180.00,
+    ...getImage('aloo-paratha'),
+    ingredients: ['Whole Wheat Flour', 'Potatoes', 'Spices'],
+    dietary: [],
+    spiceLevel: 'mild',
+    category: 'Breakfast',
+    restaurant: 'Morning Bites'
+  },
+  // Lunch from "Daily Diner"
+  {
+    id: 'special-veg-thali',
+    name: 'Special Veg Thali',
+    description: 'A complete meal with dal, two vegetable curries, rice, roti, and dessert.',
+    price: 350.00,
+    ...getImage('special-veg-thali'),
+    ingredients: ['Lentils', 'Mixed Vegetables', 'Rice', 'Wheat', 'Sugar'],
+    dietary: [],
+    spiceLevel: 'medium',
+    category: 'Lunch',
+    restaurant: 'Daily Diner'
+  },
+  // Light Snacks from "Snack Shack"
+  {
+    id: 'vada-pav',
+    name: 'Vada Pav',
+    description: 'The iconic Mumbai street food. A spiced potato fritter in a soft bread roll.',
+    price: 100.00,
+    ...getImage('vada-pav'),
+    ingredients: ['Potato', 'Gram Flour', 'Bread Roll', 'Chutney'],
+    dietary: ['vegan'],
+    spiceLevel: 'spicy',
+    category: 'Snacks',
+    restaurant: 'Snack Shack'
+  },
+  {
+    id: 'french-fries',
+    name: 'French Fries',
+    description: 'Classic crispy salted french fries.',
+    price: 150.00,
+    ...getImage('french-fries'),
+    ingredients: ['Potatoes', 'Oil', 'Salt'],
+    dietary: ['vegan', 'gluten-free'],
+    spiceLevel: 'mild',
+    category: 'Snacks',
+    restaurant: 'Burger Barn'
+  },
+  // Drinks from "The Watering Hole"
+  {
+    id: 'chocolate-milkshake',
+    name: 'Chocolate Milkshake',
+    description: 'A thick and creamy milkshake made with real chocolate ice cream.',
+    price: 200.00,
+    ...getImage('chocolate-milkshake'),
+    ingredients: ['Milk', 'Chocolate Ice Cream', 'Sugar'],
+    dietary: [],
+    spiceLevel: 'mild',
+    category: 'Shakes',
+    restaurant: 'The Watering Hole'
+  },
+  {
+    id: 'fresh-orange-juice',
+    name: 'Fresh Orange Juice',
+    description: 'Freshly squeezed orange juice, packed with Vitamin C.',
+    price: 180.00,
+    ...getImage('fresh-orange-juice'),
+    ingredients: ['Oranges'],
+    dietary: ['vegan', 'gluten-free', 'sugar-free'],
+    spiceLevel: 'mild',
+    category: 'Juices',
+    restaurant: 'The Watering Hole'
+  },
+  {
+    id: 'kingfisher-beer',
+    name: 'Kingfisher Beer',
+    description: 'A classic Indian lager, crisp and refreshing.',
+    price: 250.00,
+    ...getImage('kingfisher-beer'),
+    ingredients: ['Barley', 'Hops', 'Water', 'Yeast'],
+    dietary: [],
+    spiceLevel: 'mild',
+    category: 'Alcohol',
+    restaurant: 'The Watering Hole'
+  },
+  {
+    id: 'mojito-cocktail',
+    name: 'Mojito',
+    description: 'A refreshing cocktail with white rum, mint, lime, and soda.',
+    price: 450.00,
+    ...getImage('mojito-cocktail'),
+    ingredients: ['White Rum', 'Mint', 'Lime', 'Sugar', 'Soda Water'],
+    dietary: [],
+    spiceLevel: 'mild',
+    category: 'Alcohol',
+    restaurant: 'The Watering Hole'
+  },
 ];
