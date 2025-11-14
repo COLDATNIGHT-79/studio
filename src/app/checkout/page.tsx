@@ -44,17 +44,17 @@ export default function CheckoutPage() {
                     <div className="flex-grow">
                       <p className="font-semibold">{item.name}</p>
                       <p className="text-sm text-muted-foreground">
-                        {item.quantity} x ₹{item.price.toFixed(2)}
+                        {item.quantity} x INR {item.price.toFixed(2)}
                       </p>
                     </div>
-                    <p className="font-semibold">₹{(item.quantity * item.price).toFixed(2)}</p>
+                    <p className="font-semibold">INR {(item.quantity * item.price).toFixed(2)}</p>
                   </div>
                 ))}
               </div>
               <Separator className="my-4" />
               <div className="flex justify-between font-bold text-lg">
                 <span>Total</span>
-                <span>₹{totalPrice.toFixed(2)}</span>
+                <span>INR {totalPrice.toFixed(2)}</span>
               </div>
             </CardContent>
              <CardFooter>

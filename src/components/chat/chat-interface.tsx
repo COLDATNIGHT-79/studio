@@ -132,7 +132,7 @@ export default function ChatInterface() {
                                 <Image src={item.image} alt={item.name} width={200} height={120} className="rounded-md w-full h-24 object-cover" />
                                 <h4 className="font-semibold text-sm">{item.name}</h4>
                                 <div className="flex justify-between items-center mt-auto">
-                                    <p className="text-sm font-bold">₹{item.price.toFixed(2)}</p>
+                                    <p className="text-sm font-bold">INR {item.price.toFixed(2)}</p>
                                     <Button size="sm" variant="outline" onClick={() => addToCart(item)}>
                                         <PlusCircle className="mr-2 h-4 w-4" /> Add
                                     </Button>

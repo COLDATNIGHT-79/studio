@@ -164,7 +164,7 @@ export default function CheckoutForm() {
             {paymentMethod === 'upi' && (
               <Card className="bg-secondary/50">
                 <CardContent className="p-4 flex flex-col items-center gap-4">
-                  <p className="text-sm text-center">Scan to pay <span className="font-bold text-primary">₹{totalPrice.toFixed(2)}</span> to <span className="font-mono">{paytmId}</span></p>
+                  <p className="text-sm text-center">Scan to pay <span className="font-bold text-primary">INR {totalPrice.toFixed(2)}</span> to <span className="font-mono">{paytmId}</span></p>
                   <div className="bg-white p-2 rounded-md">
                      <QRCode value={upiUrl} size={128} />
                   </div>

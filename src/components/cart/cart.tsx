@@ -78,7 +78,7 @@ export default function Cart() {
             
             <div className="flex items-center gap-4">
               <div className="text-right">
-                <p className="font-bold text-lg text-primary">₹{totalPrice.toFixed(2)}</p>
+                <p className="font-bold text-lg text-primary">INR {totalPrice.toFixed(2)}</p>
                 <p className="text-sm text-muted-foreground">{totalItems} items</p>
               </div>
               <Button onClick={() => setIsOpen(true)} disabled={cart.length === 0} size="lg">
